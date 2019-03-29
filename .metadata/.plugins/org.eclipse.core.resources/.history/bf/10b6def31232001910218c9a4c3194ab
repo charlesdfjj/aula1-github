@@ -1,0 +1,44 @@
+package Application;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import Entities.Aluno;
+
+
+public class Program {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Locale.setDefault(Locale.US);
+		Scanner sc = new java.util.Scanner(System.in);
+		Aluno aluno = new Aluno();
+		System.out.println("Enter nome do aluno: ");
+		aluno.name = sc.nextLine();
+		System.out.println("Enter 1ª nota: ");
+		aluno.notaPrimeiroTrimestre = sc.nextDouble();
+		System.out.println("Enter 2ª nota: ");
+		aluno.notaSegundoTrimestre = sc.nextDouble();
+		System.out.println("Enter 3ª nota: ");
+		aluno.notaTerceiroTrimestre = sc.nextDouble();
+		
+		System.out.println();
+		System.out.println("Final grade: " + aluno.SomaNota());
+		System.out.println();
+		Double mediaFinal;
+		mediaFinal = aluno.MediaAluno();
+		
+		if (mediaFinal<= 60.00) {
+			System.out.println("failed");
+			System.out.println("missing " + mediaFinal);
+		}
+		else {
+			System.out.println("PASS");
+		}
+		
+		
+	
+		
+	}
+
+}
